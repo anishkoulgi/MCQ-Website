@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 
 export const Login = () => {
+  const initialUser = {
+    username: "",
+    password: ""
+  };
+  const [user, setUser] = useState(initialUser);
+
+  const handleChange = e => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(user);
+  };
+
   return (
     <div className="content">
       <div className="login-card">
@@ -13,10 +28,18 @@ export const Login = () => {
           name="username"
           placeholder="Username"
           autoComplete="off"
+          onChange={handleChange}
         ></input>
         <p className="labels">Password:</p>
-        <input type="password" name="password" placeholder="Password"></input>
-        <button className="submit">Login</button>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleChange}
+        ></input>
+        <button className="submit" onClick={handleSubmit}>
+          Login
+        </button>
         <p className="link-signup labels">
           Not yet <a href="/signup">Signed up</a>?
         </p>
