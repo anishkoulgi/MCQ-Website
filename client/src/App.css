@@ -1,0 +1,137 @@
+.content {
+  height: 100vh;
+  width: 100vw;
+  background-color: #e8eff5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-card {
+  padding: 30px 60px;
+  height: 50vh;
+  width: 20vw;
+  background-color: #e8eff5;
+  box-shadow: 7px 7px 20px #bbcfda, -7px -7px 15px #ffffff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: #4191d6;
+}
+
+.header {
+  margin: 0;
+  text-align: center;
+  font-size: 35px;
+}
+
+.desc {
+  text-align: center;
+  margin-bottom: 4vh;
+  color: #005aa8;
+}
+
+.labels {
+  color: #525252;
+}
+
+.login-card input {
+  background-color: #e8eff5;
+  width: 95%;
+  height: 4vh;
+  border-radius: 2vh;
+  border: none;
+  outline: none;
+  padding-left: 1vw;
+  margin-bottom: 4vh;
+  font-size: 20px;
+  box-shadow: 4px 4px 10px #bbcfda, -4px -4px 10px #ffffff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 400ms;
+}
+
+.submit {
+  margin-top: 1vh;
+  width: 8vw;
+  margin-left: 6vw;
+  height: 5vh;
+  font-size: 20px;
+  border-radius: 2vh;
+  background-color: #e8eff5;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px #bbcfda, -4px -4px 10px #ffffff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  transition: all 400ms;
+  color: #4191d6;
+}
+
+.submit:hover {
+  box-shadow: 4px 2px 18px #bbcfda, -4px -4px 13px #ffffff,
+    inset 6px 6px 16px rgba(209, 217, 230, 0.8),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
+
+.login-card input:focus {
+  box-shadow: 4px 2px 18px #bbcfda, -4px -4px 13px #ffffff,
+    inset 6px 6px 16px rgba(209, 217, 230, 0.8),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
+
+.link-signup {
+  margin-top: 4vh;
+  text-align: center;
+  font-size: large;
+}
+
+.link-signup a {
+  text-decoration: none;
+  color: #4191d6;
+}
+
+.link-signup a:hover {
+  color: #0088ff;
+  text-decoration: underline;
+}
+
+.signup-card {
+  padding: 30px 60px;
+  height: 60vh;
+  width: 20vw;
+  background-color: #e8eff5;
+  box-shadow: 7px 7px 20px #bbcfda, -7px -7px 15px #ffffff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: #4191d6;
+}
+
+.signup-card input {
+  background-color: #e8eff5;
+  width: 95%;
+  height: 4vh;
+  border-radius: 2vh;
+  border: none;
+  outline: none;
+  padding-left: 1vw;
+  margin-bottom: 2vh;
+  font-size: 20px;
+  box-shadow: 4px 4px 10px #bbcfda, -4px -4px 10px #ffffff,
+    inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 400ms;
+}
+
+.signup-card input:focus {
+  box-shadow: 4px 2px 18px #bbcfda, -4px -4px 13px #ffffff,
+    inset 6px 6px 16px rgba(209, 217, 230, 0.8),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
