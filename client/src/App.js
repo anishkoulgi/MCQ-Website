@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import SideDrawer from "./components/Navbar/SideDrawer";
 import UserContextProvider from "./contexts/UserContext";
+import QuizPage from "./components/quizPage";
 
 class App extends Component {
   state = {
@@ -30,7 +31,7 @@ class App extends Component {
     }
     return (
       <div className="App" style={{ height: "100%" }}>
-        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+        {/* <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
         {sideDrawer}
         <div onClick={this.sideDrawerClose}>
           <Router>
@@ -45,7 +46,8 @@ class App extends Component {
               </UserContextProvider>
             </Switch>
           </Router>
-        </div>
+        </div> */}
+        <QuizPage />
       </div>
     );
   }

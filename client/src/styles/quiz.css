@@ -1,0 +1,111 @@
+@font-face {
+  font-family: Archia;
+  src: url(../fonts/Archia-Regular.otf);
+}
+
+.quiz-body {
+  background-color: #f0f5fa;
+  height: 92vh;
+  font-family: Archia;
+}
+
+.divisions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question-pallet {
+  height: 75vh;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px #bbcfda, inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.question-main {
+  height: 75vh;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px #bbcfda, inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.status {
+  height: 75vh;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px #bbcfda, inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+    inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.quiz-title {
+  height: 5vh;
+  background-color: #f1f1f1;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-size: 25px;
+  text-align: center;
+  color: #262d33;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.pallet {
+  width: 100%;
+  height: 65vh;
+  overflow-y: scroll;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 5vh 5vh 5vh 5vh;
+  grid-auto-rows: 5vh 5vh 5vh;
+  grid-column-gap: 1.8vw;
+  grid-row-gap: 2.8vh;
+  padding: 3vh;
+  width: 100%;
+}
+.grid-item {
+  background-color: #f5f5f5;
+  padding-top: 6px;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px #bbcfda;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #262d33;
+  font-weight: bold;
+  transition: all 200ms;
+}
+
+.grid-item:hover {
+  border: 1.5px solid #262d33;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.selected {
+  background-color: #262d33;
+  color: #f5f5f5;
+}
+
+.pallet-header {
+  height: 5vh;
+  background-color: #262d33;
+  color: #f5f5f5;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 1.6vw;
+}

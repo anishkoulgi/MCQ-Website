@@ -107,7 +107,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .login-card {
@@ -115,7 +114,7 @@
   height: 50vh;
   width: 20vw;
   background-color: #e8eff5;
-  box-shadow: 7px 7px 20px #bbcfda, -7px -7px 15px #ffffff,
+  box-shadow: 7px 7px 20px #bbcfda, -5px -5px 15px #ffffff,
     inset 4px 4px 8px rgba(209, 217, 230, 0.2),
     inset -8px -8px 8px rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -149,7 +148,7 @@
   padding-left: 1vw;
   margin-bottom: 4vh;
   font-size: 20px;
-  box-shadow: 4px 4px 10px #bbcfda, -4px -4px 10px #ffffff,
+  box-shadow: 4px 4px 10px #bbcfda, -4px -4px 7px #ffffff,
     inset 4px 4px 8px rgba(209, 217, 230, 0.2),
     inset -8px -8px 8px rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
