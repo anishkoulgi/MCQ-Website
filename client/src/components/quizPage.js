@@ -164,8 +164,7 @@ function QuizPage() {
 
   return (
     <div style={{ height: "100%", width: "100%" }}>
-      <div className="dummy-div" style={{ height: "8vh" }}></div>
-      <Container fluid>
+        <Container fluid>
         <Row className="quiz-body">
           <Col sm="3" className="divisions">
             <Row className="question-pallet" noGutters>
@@ -201,7 +200,44 @@ function QuizPage() {
           </Col>
           <Col sm="6" className="divisions">
             <Row className="question-main">
-              <Col sm="12"></Col>
+              <Col sm="12">
+            
+                <div className="radiogroup">
+                <div className="radioWrapper">
+                    <input className="state" type="radio" name="app" id="a" value="a"/>
+                    <label className="label" for="a">
+                        <div className="indicator"></div>
+                        <span className="text">Kohli</span>
+                    </label>
+
+                </div>
+                <div className="radioWrapper">
+                    <input className="state" type="radio" name="app" id="b" value="b"/>
+                    <label className="label" for="b">
+                        <div className="indicator"></div>
+                        <span className="text">Rohit</span>
+                    </label>
+                    
+                </div>
+                <div className="radioWrapper">
+                    <input className="state" type="radio" name="app" id="c" value="c"/>
+                    <label className="label" for="c">
+                        <div className="indicator"></div>
+                        <span className="text">Dhoni</span>
+                    </label>
+                    
+                </div>
+                <div className="radioWrapper">
+                    <input className="state" type="radio" name="app" id="d" value="d"/>
+                    <label className="label" for="d">
+                        <div className="indicator"></div>
+                        <span className="text">All of the Above</span>
+                    </label>
+                    
+                </div>
+                </div>
+           
+              </Col>
             </Row>
           </Col>
           <Col sm="3" className="divisions">

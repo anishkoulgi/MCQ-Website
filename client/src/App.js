@@ -31,7 +31,7 @@ class App extends Component {
     }
     return (
       <div className="App" style={{ height: "100%" }}>
-        {/* <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
         {sideDrawer}
         <div onClick={this.sideDrawerClose}>
           <Router>
@@ -43,11 +43,14 @@ class App extends Component {
                 <Route exact path="/signup">
                   <Signup />
                 </Route>
+                <Route exact path="/quizpage">
+                <QuizPage />
+                </Route>
               </UserContextProvider>
             </Switch>
           </Router>
-        </div> */}
-        <QuizPage />
+        </div>
+       
       </div>
     );
   }

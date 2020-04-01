@@ -109,3 +109,99 @@
   padding-top: 10px;
   padding-left: 1.6vw;
 }
+.radiogroup{
+  margin-top: 25rem;
+  padding: 40px 55px ;
+  border-radius: 5px ;
+  height: 38%;
+  background-color: #f5f5f5;
+  box-shadow: 4px 4px 10px #bbcfda, inset 4px 4px 8px rgba(209, 217, 230, 0.2),
+  inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+ 
+  
+ 
+}
+
+.radiowrapper{
+  margin:2px 0px;
+  
+}
+
+.state{
+  
+  margin-bottom: 2rem;
+  
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.label{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: #262d33;
+    font-weight: bold;
+}
+
+.text{
+  margin-left: 16px;
+  opacity: 0.6;
+  transition: opacity .2s linear, transform .2s ease-out;
+  font-size: 20px;
+}
+
+.indicator{
+  
+  position: relative;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+
+  box-shadow: -8px -4px 8px 0px #fff, 8px 4px 12px 0px #d1d9e6; 
+  overflow: hidden;
+  margin-right: 2rem;
+
+}
+
+.indicator::before,
+.indicator::after{
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width:80%;
+  border-radius:  50%;
+}
+
+.indicator::before{
+  box-shadow: -4px -2px 4px 0px #d1d9e6, 4px 2px 8px 0px #fff;
+}
+
+.indicator::after{
+  background-color: #f5f5f5;
+  box-shadow: -4px -2px 4px 0px #fff, 4px 2px 4px 0px #d1d9e6;
+  transform: scale3d(1, 1, 1);
+}
+
+.indicator :hover{
+  box-shadow: 4px 4px 10px #bbcfda, -4px -4px 10px #ffffff,
+  inset 6px 6px 10px rgba(209, 217, 230, 0.2),
+  inset -8px -8px 8px rgba(255, 255, 255, 0.2);
+}
+
+
+.state:checked ~ .label .indicator::after {
+  transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
+}
+
+.state:focus ~ .label .text {
+  transform: translate3d(8px , 0, 0);
+  opacity: 1;
+}
+
+.label:hover .text{
+  opacity: 1;
+}
