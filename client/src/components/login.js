@@ -20,9 +20,9 @@ export const Login = () => {
   return (
     <div className="content">
       <div className="login-card">
-        <h1 className="header">LOGIN</h1>
+        <h1 className="header">Login</h1>
         <p className="desc">MCQ quizzes for Online Exams</p>
-        <p className="labels">Username:</p>
+        <p>Username:</p>
         <input
           type="text"
           name="username"
@@ -30,7 +30,7 @@ export const Login = () => {
           autoComplete="off"
           onChange={handleChange}
         ></input>
-        <p className="labels">Password:</p>
+        <p>Password:</p>
         <input
           type="password"
           name="password"
