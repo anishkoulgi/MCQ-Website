@@ -26,7 +26,7 @@
 }
 
 .question-main {
-  height: 75vh;
+  height: 80vh;
   width: 80%;
   background-color: #ffffff;
   box-shadow: 4px 4px 10px #bbcfda, inset 4px 4px 8px rgba(209, 217, 230, 0.2),
@@ -60,7 +60,7 @@
 .pallet {
   width: 100%;
   height: 65vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .grid-container {
@@ -85,7 +85,7 @@
 }
 
 .grid-item:hover {
-  border: 1.5px solid #262d33;
+  border: 1px solid #262d33;
   cursor: pointer;
   box-shadow: none;
 }
@@ -106,11 +106,32 @@
   padding-top: 7px;
   padding-left: 1.6vw;
 }
+
+.question-text {
+  height: 50vh;
+  background-color: #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.question-data {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: -1vh;
+  font-size: 15px;
+}
+
+.question-number {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
 .radiogroup {
-  margin-top: 19.5rem;
-  padding: 25px 55px;
+  padding: 25px 30px;
   border-radius: 5px;
-  height: 38%;
+  height: 30vh;
   background-color: #f5f5f5;
   box-shadow: 4px 4px 10px #bbcfda, inset 4px 4px 8px rgba(209, 217, 230, 0.2),
     inset -8px -8px 8px rgba(255, 255, 255, 0.2);
@@ -121,7 +142,7 @@
 }
 
 .state {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 
   top: 0;
   left: 0;
@@ -137,10 +158,10 @@
 }
 
 .text {
-  margin-left: 16px;
+  margin-left: 10px;
   opacity: 0.6;
   transition: opacity 0.2s linear, transform 0.2s ease-out;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .indicator {

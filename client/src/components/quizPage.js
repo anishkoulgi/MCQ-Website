@@ -1,164 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Container } from "reactstrap";
 import "../styles/quiz.css";
+import axios from "axios";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2
+} from "react-html-parser";
 
 function QuizPage() {
-  const question = [
-    {
-      id: 1,
-      selected: true
-    },
-    {
-      id: 2,
-      selected: false
-    },
-    {
-      id: 3,
-      selected: false
-    },
-    {
-      id: 4,
-      selected: false
-    },
-    {
-      id: 5,
-      selected: false
-    },
-    {
-      id: 6,
-      selected: false
-    },
-    {
-      id: 7,
-      selected: false
-    },
-    {
-      id: 8,
-      selected: false
-    },
-    {
-      id: 9,
-      selected: false
-    },
-    {
-      id: 10,
-      selected: false
-    },
-    {
-      id: 11,
-      selected: false
-    },
-    {
-      id: 12,
-      selected: false
-    },
-    {
-      id: 13,
-      selected: false
-    },
-    {
-      id: 14,
-      selected: false
-    },
-    {
-      id: 15,
-      selected: true
-    },
-    {
-      id: 16,
-      selected: false
-    },
-    {
-      id: 17,
-      selected: false
-    },
-    {
-      id: 18,
-      selected: false
-    },
-    {
-      id: 19,
-      selected: false
-    },
-    {
-      id: 20,
-      selected: false
-    },
-    {
-      id: 21,
-      selected: false
-    },
-    {
-      id: 22,
-      selected: false
-    },
-    {
-      id: 23,
-      selected: false
-    },
-    {
-      id: 24,
-      selected: false
-    },
-    {
-      id: 25,
-      selected: false
-    },
-    {
-      id: 26,
-      selected: false
-    },
-    {
-      id: 27,
-      selected: false
-    },
-    {
-      id: 28,
-      selected: false
-    },
-    {
-      id: 29,
-      selected: false
-    },
-    {
-      id: 30,
-      selected: false
-    },
-    {
-      id: 31,
-      selected: false
-    },
-    {
-      id: 32,
-      selected: false
-    },
-    {
-      id: 33,
-      selected: false
-    },
-    {
-      id: 34,
-      selected: false
-    },
-    {
-      id: 35,
-      selected: false
-    },
-    {
-      id: 36,
-      selected: false
-    },
-    {
-      id: 37,
-      selected: false
-    }
-  ];
+  useEffect(() => {
+    axios
+      .get("https://opentdb.com/api.php?amount=50&type=multiple")
+      .then(res => {
+        console.log(res);
+        setQuestion({
+          questions: res.data.results
+        });
+        setQues({
+          data: res.data.results[0].question,
+          selected: 1,
+          a: res.data.results[0].correct_answer,
+          b: res.data.results[0].incorrect_answers[0],
+          c: res.data.results[0].incorrect_answers[1],
+          d: res.data.results[0].incorrect_answers[2]
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
-  const [ques, setQues] = useState({ qno: 1 });
+  const [questionsArray, setQuestion] = useState({ questions: [] });
+  const [ques, setQues] = useState({
+    data: "",
+    selected: 1,
+    a: "",
+    b: "",
+    c: "",
+    d: ""
+  });
 
   const handleClick = val => {
     setQues({
-      qno: val
+      data: questionsArray.questions[val - 1].question,
+      selected: val,
+      a: questionsArray.questions[val - 1].correct_answer,
+      b: questionsArray.questions[val - 1].incorrect_answers[0],
+      c: questionsArray.questions[val - 1].incorrect_answers[1],
+      d: questionsArray.questions[val - 1].incorrect_answers[2]
     });
   };
 
@@ -175,21 +65,21 @@ function QuizPage() {
                 <div className="pallet-header">Question Pallet</div>
                 <Row className="pallet" noGutters>
                   <div className="grid-container">
-                    {question.map(que => {
-                      if (ques.qno == que.id) {
+                    {questionsArray.questions.map((que, id) => {
+                      if (ques.selected === id + 1) {
                         return (
-                          <div key={que.id} className="grid-item selected">
-                            {que.id}
+                          <div key={id + 1} className="grid-item selected">
+                            {id + 1}
                           </div>
                         );
                       }
                       return (
                         <div
-                          key={que.id}
+                          key={id + 1}
                           className="grid-item"
-                          onClick={() => handleClick(que.id)}
+                          onClick={() => handleClick(id + 1)}
                         >
-                          {que.id}
+                          {id + 1}
                         </div>
                       );
                     })}
@@ -199,7 +89,13 @@ function QuizPage() {
             </Row>
           </Col>
           <Col sm="6" className="divisions">
-            <Row className="question-main">
+            <Row className="question-main" noGutters>
+              <Col sm="12" className="question-text">
+                <p className="question-number">
+                  {ReactHtmlParser(`Question ${ques.selected}`)}
+                </p>
+                <p className="question-data"> {ReactHtmlParser(ques.data)}</p>
+              </Col>
               <Col sm="12">
                 <div className="radiogroup">
                   <div className="radioWrapper">
@@ -212,7 +108,7 @@ function QuizPage() {
                     />
                     <label className="label" for="a">
                       <div className="indicator"></div>
-                      <span className="text">Kohli</span>
+                      <span className="text">{ReactHtmlParser(ques.a)}</span>
                     </label>
                   </div>
                   <div className="radioWrapper">
@@ -225,7 +121,7 @@ function QuizPage() {
                     />
                     <label className="label" for="b">
                       <div className="indicator"></div>
-                      <span className="text">Rohit</span>
+                      <span className="text">{ReactHtmlParser(ques.b)}</span>
                     </label>
                   </div>
                   <div className="radioWrapper">
@@ -238,7 +134,7 @@ function QuizPage() {
                     />
                     <label className="label" for="c">
                       <div className="indicator"></div>
-                      <span className="text">Dhoni</span>
+                      <span className="text">{ReactHtmlParser(ques.c)}</span>
                     </label>
                   </div>
                   <div className="radioWrapper">
@@ -251,7 +147,7 @@ function QuizPage() {
                     />
                     <label className="label" for="d">
                       <div className="indicator"></div>
-                      <span className="text">All of the Above</span>
+                      <span className="text">{ReactHtmlParser(ques.d)}</span>
                     </label>
                   </div>
                 </div>
